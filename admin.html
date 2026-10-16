@@ -1,0 +1,38 @@
+
+<html>
+<head>
+    <title>Admin Page</title>
+</head>
+<body>
+    <h1>Admin Dashboard</h1>
+
+    <a href="index.html">Home</a> |
+    <a href="user.html">User</a>
+
+    <h2>Add New Event</h2>
+
+    <form onsubmit="addEvent(event)">
+        <input id="event" placeholder="Event Name" required>
+        <input id="date" type="date" required>
+        <input id="venue" placeholder="Venue" required>
+        <button type="submit">Add Event</button>
+    </form>
+
+    <p id="result"></p>
+
+    <script>
+        function addEvent(e) {
+            e.preventDefault();
+
+            let name = document.getElementById("event").value;
+            let date = document.getElementById("date").value;
+            let venue = document.getElementById("venue").value;
+
+            document.getElementById("result").innerHTML =
+                name + " | " + date + " | " + venue;
+
+            alert("Event Added Successfully!");
+        }
+    </script>
+</body>
+</html>
